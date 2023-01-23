@@ -1,0 +1,36 @@
+/* .grid-System{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    /* text-align: center; */
+.card{
+    width: 18rem;
+    box-Shadow:1px 10px 10px white;
+    margin: 10px 10px 20px 10px;
+    height: 10rem;
+
+}
+.card-image{
+    height: 14rem;
+}
+.card-image:hover{
+    cursor: pointer;
+
+    animation-name: ImageMovingSlide;
+    animation-duration: 3s;
+
+}
+
+@keyframes ImageMovingSlide{
+   from{
+     /* background-color: red; */
+       width: 12rem;
+       zoom: 0%;
+
+     }
+     to{
+        background-color: red;
+        width: 18rem;
+        zoom: 100%;
+
+     }
+}
