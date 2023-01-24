@@ -9,7 +9,7 @@ const BackDrop=(props)=>{
 const ModalOverLay=(props)=>{
     return  (
         <div className="ModalOverLayCart">
-       <div>{props.children}</div>
+       <div className="content">{props.children}</div>
 
         </div>
     )

@@ -1,6 +1,7 @@
 import React from 'react'
 import './App.css';
 import Modal from './components/Model/Modal'
+
 // import Showproduct from './components/ProductItems/'
 
 
@@ -18,9 +19,12 @@ function App() {
 
   return (
      <React.Fragment>
+
      <Navbar/>
-     <h1 className="header">PrOdUcTs</h1>
+       <h1 className="header">PrOdUcTs</h1>
      <ProductItem />
+
+
 
   </React.Fragment>
   )
