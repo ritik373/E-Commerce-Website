@@ -19,6 +19,7 @@ const ProductItem = (props) => {
 
 
   return (<Fragment>
+    <h1 className="header">Store</h1>
     <Container>
       <Row sm={2}>
         {Dummy_data.map((item) => {

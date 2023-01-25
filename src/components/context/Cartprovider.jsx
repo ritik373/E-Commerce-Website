@@ -6,20 +6,21 @@ const cartContext=createContext();
  const initialState={
      items:[],
      amount:0,
+     totalCartItem:0,
  }
 
 const reducer=(state,action)=>{
      if(action.type==="ADDTOCART"){
 
          state.amount=+state.amount + action.payload.price ;
-
-         const updateTotal=state.amount/2;
-
+       const updateTotal=state.amount/2;
+       
         //  console.log(state.items);
         return {
             ...state,
             items:[...state.items,action.payload],
             TotalAmount:updateTotal,
+       
 
         }
      }
@@ -45,11 +46,11 @@ const Cartprovider=(props)=>{
 
     
     const addToCart=(item)=>{
-        dispatch({type:"ADDTOCART",payload:item})
+        dispatch({type:"ADDTOCART", payload:item})
     }
 
     const removeToCart=(item)=>{
-        dispatch({type:"REMOVETOCART",payload : item})
+        dispatch({type:"REMOVETOCART", payload : item})
     }
  
 

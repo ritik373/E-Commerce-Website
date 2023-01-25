@@ -9,6 +9,23 @@
     width:100%;
     height:70px;
     background:gray;
+    /* float:left; */
     display: flex;
     justify-content: end;
 }
+
+a{
+    /* color: red; */
+    padding: 20px;
+    color:white;
+    text-decoration: none;
+ 
+
+
+}
+ a.isActive {
+    color: red;
+    text-underline-position: below;
+     background-color: blue; 
+    
+} 

@@ -5,6 +5,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import "./NavBar.css"
 import AddToCart from '../UI/AddToCart';
+import {Link , NavLink} from 'react-router-dom';
 
 
 
@@ -16,15 +17,16 @@ const NavBar=()=>{
         <Container >
           <Navbar.Brand href="#home"  style={{color:"white"}} >E-Commerce Store</Navbar.Brand>
           <Nav className="me-auto" >
-            <Nav.Link href="#home"  style={{color:"white"}}>Home</Nav.Link>
-            <Nav.Link href="#features"  style={{color:"white"}}>Store</Nav.Link>
-            <Nav.Link href="#pricing"  style={{color:"white"}}>About us</Nav.Link>
+            <NavLink   activeClassName="active_class" to="/home"  >Home</NavLink>
+            <NavLink   activeClassName="active_class" to="/"  >Store</NavLink>
+            <NavLink   activeClassName="active_class" to="/about" >About us</NavLink>
+            
           </Nav>
         </Container>
       </Navbar>
 
       <div className="addtocart">
-      <AddToCart />
+      <AddToCart  />
       
       </div>
    

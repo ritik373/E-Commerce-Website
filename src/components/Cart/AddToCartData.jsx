@@ -18,9 +18,6 @@ const AddToCartData = (props) => {
             <th>Quantity</th>
             <th>Delete</th>
         </tr>
-  
-        
-       
            {items.map((item)=>{
 
            return  <tr>
