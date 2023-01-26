@@ -5,6 +5,7 @@ import ProductItem from '../src/components/ProductItems/ProductItems'
 import Navbar from '../src/components/NavBar/NavBar'
 import AboutUs from './components/NavBar/Pages/AboutUs'
 import Home from './components/NavBar/Pages/Home'
+import Contact from './components/NavBar/Pages/contactUs/Contact'
 // import  from './components/NavBar/Pages/AboutUs'
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 
@@ -24,6 +25,7 @@ function App() {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/home" element={<Home />} />
           <Route path="/" element={<ProductItem/>} />
+          <Route path="/contact" element={<Contact/>} />
        </Routes>
 
 

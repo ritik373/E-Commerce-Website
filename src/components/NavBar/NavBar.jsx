@@ -15,11 +15,12 @@ const NavBar=()=>{
    
         <Navbar bg="primary" variant="primary" className="navbar-min">
         <Container >
-          <Navbar.Brand href="#home"  style={{color:"white"}} >E-Commerce Store</Navbar.Brand>
+          <Navbar.Brand href="#home"  style={{color:"white"}} > <NavLink to="/" >E-Commerce Store</NavLink></Navbar.Brand>
           <Nav className="me-auto" >
             <NavLink   activeClassName="active_class" to="/home"  >Home</NavLink>
             <NavLink   activeClassName="active_class" to="/"  >Store</NavLink>
             <NavLink   activeClassName="active_class" to="/about" >About us</NavLink>
+            <NavLink   activeClassName="active_class" to="/contact" >Contact us</NavLink>
             
           </Nav>
         </Container>
