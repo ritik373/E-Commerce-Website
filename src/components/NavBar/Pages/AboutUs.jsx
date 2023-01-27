@@ -1,4 +1,5 @@
 import React from 'react';
+import { Outlet } from 'react-router-dom';
 
 const AboutUs=()=>{
     return(
@@ -11,7 +12,7 @@ const AboutUs=()=>{
          perferendis suscipit ratione minus inventore reiciendis? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora sapiente nulla rerum consequuntur cum excepturi quam reprehenderit mollitia hic. Dicta quidem eligendi asperiores nobis 
          accusamus dignissimos, libero pariatur quaerat aliquam!tur quaerat aliquam!</p>
 
-        
+        <Outlet/>
         </div>
         ) 
         

@@ -24,6 +24,7 @@ const reducer=(state,action)=>{
 
         }
      }
+
      if (action.type==='REMOVETOCART'){
         //   console.log("clicked on remove button",action.payload);
 
@@ -39,6 +40,14 @@ const reducer=(state,action)=>{
         
      }
 
+     if(action.type==='SINGLE--PRODUCT'){
+         console.log("singlePageProduct",action.payload)
+        return { ...state,
+            items:state.items,
+            TotalAmount:state.TotalAmount-action.payload.price,}
+
+     }
+
  }
 
 const Cartprovider=(props)=>{
@@ -52,9 +61,14 @@ const Cartprovider=(props)=>{
     const removeToCart=(item)=>{
         dispatch({type:"REMOVETOCART", payload : item})
     }
+    
+    const singlePageProduct=(item)=>{
+        dispatch({type:"SINGLE--PRODUCT", payload : item})
+        
+    }
  
 
-    return (<cartContext.Provider value={{...state,addToCart,removeToCart}}>
+    return (<cartContext.Provider value={{...state,addToCart,removeToCart,singlePageProduct}}>
         {props.children}
         </cartContext.Provider>
     )

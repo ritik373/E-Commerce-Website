@@ -6,16 +6,19 @@ import Navbar from '../src/components/NavBar/NavBar'
 import AboutUs from './components/NavBar/Pages/AboutUs'
 import Home from './components/NavBar/Pages/Home'
 import Contact from './components/NavBar/Pages/contactUs/Contact'
+import SinglePageProduct from '../src/components/ProductItems/SaprateItemsDeatail/ShowUniqueDetailItem'
+
 // import  from './components/NavBar/Pages/AboutUs'
-import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Routes, createBrowserRouter } from 'react-router-dom';
 
 
 
-function App() {
 
-  // const AboutUs = () => {
-  //   return <h1>this is About us page</h1>
-  // }
+
+
+function App(props) {
+
+
 
   return (
     <React.Fragment>
@@ -26,6 +29,8 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/" element={<ProductItem/>} />
           <Route path="/contact" element={<Contact/>} />
+
+          <Route path='/detailproduct/:value' element={<SinglePageProduct  />}/>
        </Routes>
 
 

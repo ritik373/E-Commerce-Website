@@ -3,6 +3,7 @@ import classes from './Cart.module.css'
 // import dummy from '../ProductItems/Dummy_data'
 // import {initialState} from '../context/Cartprovider'
 import {cartContext} from '../context/Cartprovider'
+import { Outlet } from 'react-router-dom';
 
 
 const AddToCartData = (props) => {
@@ -42,7 +43,7 @@ const AddToCartData = (props) => {
                 <button className={classes.button} >Order</button>
             </div>
 
-
+<Outlet/>
 </div>
 )
 

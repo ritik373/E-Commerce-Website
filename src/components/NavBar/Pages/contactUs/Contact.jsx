@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import './contact.css'
 import { useState } from 'react';
+import { Outlet } from 'react-router-dom';
 
 const MovieForm = (props) => {
     const [name,setName]=useState('');
@@ -27,7 +28,7 @@ const MovieForm = (props) => {
 
     const onSubmitHandler=(e)=>{
         e.preventDefault();
-        const MovieData={
+        const ContactData={
         
             name: name,
             email: email,
@@ -38,12 +39,12 @@ const MovieForm = (props) => {
         fetch('https://react-http-movie-7299d-default-rtdb.firebaseio.com/contactus.json',{
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(MovieData),
+            body: JSON.stringify(ContactData),
 
         })
 
         alert("We'll Contact You Soon ");
-        console.log(MovieData);
+        console.log(ContactData);
         setName('');
         setEmail('');
         setNumber('');
@@ -52,12 +53,12 @@ const MovieForm = (props) => {
 
     return (<Fragment>
         <div className="formcard">
-            <div className="form">
+            <div className="header">
                 <form action="" onSubmit={onSubmitHandler}>
 
-                    <label htmlFor="t">Name</label><br />
+                    <label htmlFor="t">Full Name</label><br />
                     <input type="text" width="100%" onChange={onNameHandler} value={name}/><br />
-                    <label htmlFor="">Email</label><br />
+                    <label htmlFor="">Email Address</label><br />
                     <input type="email" name="" id="" onChange={onEmailHandler} value={email}/><br />
                     <label htmlFor="">Mobile Number</label><br />
                     <input type="text" name="" id="" onChange={onMobileNumberHandler} value={number}/><br />
@@ -69,7 +70,7 @@ const MovieForm = (props) => {
 
             </div>
         </div>
-
+  <Outlet/>
     </Fragment>
     )
 }

@@ -10,11 +10,17 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 // import { useContext } from 'react';
 import {cartContext} from '../context/Cartprovider'
-
+import {Link, Outlet} from 'react-router-dom';
 
 const ProductItem = (props) => {
 
   const {addToCart} = useContext(cartContext);
+  // const {singlePageProduct} = useContext(singleProductContext);
+  
+
+
+
+
 
 
 
@@ -31,8 +37,10 @@ const ProductItem = (props) => {
                 <Card.Text>
                   <h5>${item.price}</h5>
                 </Card.Text>
-                <Button variant="primary" onClick={addToCart.bind(null,item)}>
+                <Link to={`/detailproduct/${item.id}`} ><Button >View More</Button>
+                </Link><Button variant="success" onClick={addToCart.bind(null,item)}>
                 Add to Cart</Button>
+             
               </Card.Body>
             </Card>
 
@@ -40,10 +48,11 @@ const ProductItem = (props) => {
           </div>
         })}
       </Row>
-
-    </Container>
+  </Container>
+    <Outlet/>
   </Fragment>
   )
 }
 
 export default ProductItem;
+// export {SinglePageProduct};

@@ -4,6 +4,7 @@ import Modal from '../Model/Modal'
 import AddToCartData from '../Cart/AddToCartData'
 import {cartContext }from '../context/Cartprovider'
 import { useContext } from 'react';
+import { Outlet } from 'react-router-dom';
 
 
 const AddToCart=()=>{
@@ -29,7 +30,7 @@ const AddToCart=()=>{
          {cart && <Modal onHideModal={onHideModalHandler}>
          <AddToCartData onHideModal={onHideModalHandler}/>
          </Modal>}
-        
+        <Outlet/>
         </Fragment>
     )
 
