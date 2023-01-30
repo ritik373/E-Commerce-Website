@@ -6,27 +6,19 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import CartProvider from '../src/components/context/Cartprovider';
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import AuthContextProvider from './components/Auth-context/AuthContextProvider'
 
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <CartProvider>
-  
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<App />}>
-              <Route path="/about" />
-              <Route path="/home" />
-              <Route path="/contact" />
-              <Route path='/detailproduct/:value' />
-
-
-            </Route>
-          </Routes>
-        </BrowserRouter>
-
-    </CartProvider>
+  <AuthContextProvider>
+    <BrowserRouter>
+      <CartProvider>
+        <App />
+      </CartProvider>
+      </BrowserRouter>
+      </AuthContextProvider>
 
   </React.StrictMode>,
 )
