@@ -1,4 +1,4 @@
-import React, { Fragment,useContext } from 'react';
+import React, { Fragment,useContext, useState } from 'react';
 import './productItem.css'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -11,8 +11,10 @@ import Card from 'react-bootstrap/Card';
 // import { useContext } from 'react';
 import {cartContext} from '../context/Cartprovider'
 import {Link, Outlet} from 'react-router-dom';
+import Item from './Items'
 
 const ProductItem = (props) => {
+  const [data,setData]=useState(Dummy_data);
 
   const {addToCart} = useContext(cartContext);
   // const {singlePageProduct} = useContext(singleProductContext);
@@ -28,24 +30,8 @@ const ProductItem = (props) => {
     <h1 className="header">Store</h1>
     <Container>
       <Row sm={2}>
-        {Dummy_data.map((item) => {
-          return <div>
-            <Card className="card" >
-              <Card.Img className="card-image" variant="top" src={item.imageUrl} />
-              <Card.Body>
-                <Card.Title>{item.title}</Card.Title>
-                <Card.Text>
-                  <h5>${item.price}</h5>
-                </Card.Text>
-                <Link to={`/detailproduct/${item.id}`} ><Button >View More</Button>
-                </Link><Button variant="success" onClick={addToCart.bind(null,item)}>
-                Add to Cart</Button>
-             
-              </Card.Body>
-            </Card>
-
-
-          </div>
+        {data.map((item) => {
+            return <Item key={item.id} {...item}/>
         })}
       </Row>
   </Container>

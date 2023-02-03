@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactDOM from 'react-dom/client'
+import ReactDOM from 'react-dom'
 import App from './App'
 import '../node_modules/bootstrap/dist/js/bootstrap'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
@@ -10,15 +10,16 @@ import AuthContextProvider from './components/Auth-context/AuthContextProvider'
 
 
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-  <AuthContextProvider>
+ReactDOM.render(
+   <div>
+   <AuthContextProvider>
     <BrowserRouter>
       <CartProvider>
         <App />
       </CartProvider>
       </BrowserRouter>
       </AuthContextProvider>
-
-  </React.StrictMode>,
-)
+  
+  
+  </div> ,document.getElementById('root'));
+ 
