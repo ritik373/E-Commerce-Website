@@ -11,6 +11,8 @@ const initialState = {
     amount: 0,
     totalCartItem: 0,
     counter:0,
+    showdatainCart:false,
+    
 
 
 }
@@ -37,7 +39,7 @@ const reducer = (state, action) => {
         // useEffect(()=>{
         //     console.log("addd cart items")
 
-        fetch('https://crudcrud.com/api/45756a8eaa75461aaa8d14e69f766131/addTocart', {
+        fetch('https://crudcrud.com/api/e05dfb4d1c7b426bad0af8795198449d/addTocart', {
             method: 'POST',
             body: JSON.stringify({ item: action.payload }),
             headers: { 'Content-Type': 'application/json' }
@@ -65,7 +67,7 @@ const reducer = (state, action) => {
         // console.log(action.payload)
 
         // useEffect(() => {
-        fetch(`https://crudcrud.com/api/45756a8eaa75461aaa8d14e69f766131/addTocart/${action.payload._id}`, {
+        fetch(`https://crudcrud.com/api/e05dfb4d1c7b426bad0af8795198449d/addTocart/${action.payload._id}`, {
             method: 'DELETE',
             headers: { 'Content-Type': 'application/json' }
         })

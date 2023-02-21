@@ -19,16 +19,17 @@ const AddToCart=()=>{
 
     useEffect(()=>{
 
-        fetch('https://crudcrud.com/api/45756a8eaa75461aaa8d14e69f766131/addTocart', {
+        fetch('https://crudcrud.com/api/e05dfb4d1c7b426bad0af8795198449d/addTocart', {
             method: 'GET',
             headers: { 'Content-Type': 'application/json' }
         }).then((res) => {
             return res.json();
         }).then((data) => {
+            // console.log(data)
             setItemCartTotallength(data.length);
          });
 
-    },[])
+    },[cart])
 
    
 
